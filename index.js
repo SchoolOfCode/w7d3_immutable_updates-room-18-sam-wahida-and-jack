@@ -1,19 +1,34 @@
 // Arrays:
 
 // Immutably add an item to the end of an array
-export function addToEnd(array, item) {}
+export function addToEnd(array, item) {
+    array = [...array,item]
+    return array
+}
 
 // Immutably add an item to the beginning of an array
-export function addToBeginning(array, item) {}
+export function addToBeginning(array, item) {
+    array = [item,...array]
+    return array
+}
 
 // Immutably insert an item at a specific position/index within an array
-export function insertItem(array, item, index) {}
+export function insertItem(array, item, index) {
+array = [...array.slice(0,index),item,...array.slice(index)]
+return array
+}
 
 // Immutably replace an item at a specific position/index within an array
-export function replaceItem(array, item, index) {}
+export function replaceItem(array, item, index) {
+    array = [...array.slice(0,index),item,...array.slice(index+1)]
+    return array
+}
 
 // Immutably remove an item at a specific position/index within an array
-export function removeItem(array, index) {}
+export function removeItem(array, index) {
+    array = [...array.slice(0,index),...array.slice(index+1)]
+    return array
+}
 
 //Objects:
 
